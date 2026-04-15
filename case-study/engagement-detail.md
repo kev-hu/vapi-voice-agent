@@ -113,8 +113,8 @@ How to measure whether the agent is actually working:
 
 What changes moving from prototype to production:
 
-- **Code Tools → middleware API:** Replace mock data with authenticated calls to Salesforce REST API, Azure AI Search (SharePoint), and Genesys Cloud Platform API via a serverless middleware layer
-- **Authentication:** OAuth 2.0 for Salesforce, Azure AD/Entra ID for SharePoint, Genesys OAuth for transfers
+- **Code Tools → middleware API:** Replace mock data with authenticated calls to Salesforce REST API and Genesys Cloud Platform API via a serverless middleware layer
+- **Authentication:** OAuth 2.0 for Salesforce, Genesys OAuth for transfers
 - **PII governance:** Middleware scopes returned fields — the LLM never sees SSNs, full account numbers, or other sensitive data it doesn't need
 - **Audit logging:** Every tool call logged with call ID, timestamp, and data accessed for compliance
 - **Call recording consent:** Managed at the Genesys Architect flow level before the call reaches the AI agent

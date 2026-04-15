@@ -14,7 +14,7 @@ What's in here: my scoping decisions, a working prototype, the ROI model, and th
 | LLM | [OpenAI GPT-4o](https://openai.com) |
 | Voice synthesis | [ElevenLabs](https://elevenlabs.io) |
 | Transcription | [Deepgram](https://deepgram.com) |
-| Integrations *(mocked)* | Salesforce (CRM) · Genesys Cloud (CCaaS) · SharePoint via Azure AI Search (KB) |
+| Integrations *(mocked)* | Salesforce (CRM) · Genesys Cloud (CCaaS) |
 
 ---
 
@@ -98,7 +98,6 @@ Caller
   → Genesys Cloud (telephony / call routing)
     → Vapi Agent (voice AI)
         ├── Salesforce (customer verification, account data)
-        ├── SharePoint via Azure AI Search (knowledge base)
         └── Genesys Cloud API (warm transfer to live agents)
 ```
 
@@ -166,4 +165,4 @@ Honest reflections after building this:
 
 ---
 
-**Author:** Kevin Hu · [LinkedIn](https://www.linkedin.com/in/kevinqinhu/)
+**Author:** Kevin Hu · [LinkedIn](https://www.linkedin.com/in/kevinqinhu/) · [kevinhu.fyi](https://kevinhu.fyi)
