@@ -1,0 +1,16 @@
+# Secrets
+.env
+.env.*
+
+# Claude Code local settings (contains hardcoded tokens)
+.claude/
+
+# macOS
+.DS_Store
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+.idea/
+.vscode/

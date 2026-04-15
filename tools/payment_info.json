@@ -1,0 +1,18 @@
+{
+  "type": "code",
+  "function": {
+    "name": "payment_info",
+    "description": "Retrieve payment and billing information for a policy. Only call after caller identity is verified. Do NOT use for payment disputes - those must be escalated to a live agent.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "policyNumber": {
+          "type": "string",
+          "description": "The policy number to look up billing for"
+        }
+      },
+      "required": ["policyNumber"]
+    }
+  },
+  "code": "const { policyNumber } = args;\nreturn {\n  policyNumber: policyNumber || 'EVS-2024-1847362',\n  currentBalance: '$0.00',\n  paymentStatus: 'Current - Paid through March 2024',\n  lastPayment: { amount: '$142.50', date: '2024-02-01', method: 'Auto-pay (checking ending in 4821)' },\n  nextPayment: { amount: '$142.50', dueDate: '2024-04-01' },\n  paymentMethod: 'Auto-pay enrolled (checking ending in 4821)',\n  paymentOptions: 'Online at eversure.com/pay, by phone, or by mail'\n};"
+}

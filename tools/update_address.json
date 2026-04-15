@@ -1,0 +1,18 @@
+{
+  "type": "code",
+  "function": {
+    "name": "update_address",
+    "description": "Update the mailing address on file for a verified policyholder. Only call after identity is verified and the new address has been read back and confirmed by the caller.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "street": { "type": "string", "description": "New street address" },
+        "city": { "type": "string", "description": "City" },
+        "state": { "type": "string", "description": "Two-letter state abbreviation" },
+        "zip": { "type": "string", "description": "ZIP code" }
+      },
+      "required": ["street", "city", "state", "zip"]
+    }
+  },
+  "code": "const { street, city, state, zip } = args;\nconst newAddress = street + ', ' + city + ', ' + state + ' ' + zip;\nreturn {\n  status: 'success',\n  previousAddress: '742 Maple Drive, Springfield, IL 62704',\n  newAddress: newAddress,\n  effectiveDate: '2024-03-10',\n  note: 'Allow 1-2 business days for the change to reflect on all documents.'\n};"
+}

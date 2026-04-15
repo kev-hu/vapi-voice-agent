@@ -1,0 +1,17 @@
+{
+  "type": "code",
+  "function": {
+    "name": "transfer_to_agent",
+    "description": "Warm transfer the caller to a live agent via Genesys Cloud. Use for: payment disputes, coverage/eligibility questions, caller requests for a human, or unresolvable issues. Always provide a reason and conversation summary.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "reason": { "type": "string", "description": "Why the caller is being transferred" },
+        "summary": { "type": "string", "description": "Summary of conversation so far to pass to the receiving agent" },
+        "queue": { "type": "string", "description": "Target queue: Billing Specialists, Licensed Agents, or General Support" }
+      },
+      "required": ["reason", "summary"]
+    }
+  },
+  "code": "const { reason, summary, queue } = args;\nreturn {\n  status: 'transfer_initiated',\n  transferType: 'warm',\n  destinationQueue: queue || 'General Support',\n  estimatedWaitTime: 'approximately 2 minutes',\n  contextPassed: { reason: reason, conversationSummary: summary },\n  message: 'Caller is being connected to a live agent with full conversation context.'\n};"
+}

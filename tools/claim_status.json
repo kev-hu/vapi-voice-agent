@@ -1,0 +1,18 @@
+{
+  "type": "code",
+  "function": {
+    "name": "claim_status",
+    "description": "Look up the status of an insurance claim by claim number. Only call after caller identity is verified.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "claimNumber": {
+          "type": "string",
+          "description": "The claim number to look up"
+        }
+      },
+      "required": ["claimNumber"]
+    }
+  },
+  "code": "const { claimNumber } = args;\nreturn {\n  claimNumber: claimNumber || 'CLM-2024-09823',\n  status: 'Under Review',\n  type: 'Water Damage - Kitchen',\n  dateOfLoss: '2024-02-15',\n  dateFiled: '2024-02-16',\n  assignedAdjuster: 'Michael Torres',\n  lastUpdate: '2024-03-01',\n  nextStep: 'Adjuster site visit scheduled for March 8, 2024',\n  estimatedCompletion: 'March 15, 2024'\n};"
+}

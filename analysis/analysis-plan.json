@@ -1,0 +1,21 @@
+{
+  "summaryPlan": {
+    "enabled": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Summarize this EverSure Insurance call in 2-3 sentences. Include: the caller intent (claim status, payment, coverage/eligibility, or address update), whether the issue was resolved by the AI or escalated to a live agent, and if escalated, to which queue."
+      }
+    ]
+  },
+  "successEvaluationPlan": {
+    "enabled": true,
+    "rubric": "PassFail",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Evaluate if this call was successful. A call is successful if EITHER: (1) the caller issue was fully resolved by the AI agent (containment), OR (2) the call was correctly escalated to the appropriate queue with full context passed to the receiving agent. A call is unsuccessful if: the caller was confused, the agent gave incorrect information, the agent failed to verify identity before sharing account data, or the caller was transferred to the wrong queue."
+      }
+    ]
+  }
+}

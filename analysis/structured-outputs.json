@@ -1,0 +1,58 @@
+[
+  {
+    "id": "<structured-output-id>",
+    "name": "Intent Detected",
+    "description": "The primary intent of the caller. Used to track call volume by intent category.",
+    "schema": {
+      "type": "string",
+      "enum": ["claim_status", "payment_question", "coverage_eligibility", "address_update", "other", "unknown"]
+    }
+  },
+  {
+    "id": "<structured-output-id>",
+    "name": "Call Contained",
+    "description": "Whether the call was fully resolved by the AI agent without transfer to a live agent. Primary containment KPI.",
+    "schema": {
+      "type": "boolean"
+    }
+  },
+  {
+    "id": "<structured-output-id>",
+    "name": "Identity Verified",
+    "description": "Whether the caller successfully passed identity verification (policy number + last name).",
+    "schema": {
+      "type": "boolean"
+    }
+  },
+  {
+    "id": "<structured-output-id>",
+    "name": "Escalation Details",
+    "description": "If the call was escalated, captures which queue and why. Used to identify escalation patterns.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "escalated": { "type": "boolean" },
+        "queue": { "type": "string", "enum": ["Billing Specialists", "Licensed Agents", "General Support", "none"] },
+        "reason": { "type": "string" }
+      },
+      "required": ["escalated"]
+    }
+  },
+  {
+    "id": "<structured-output-id>",
+    "name": "Caller Sentiment",
+    "description": "Overall caller sentiment during the call. Proxy metric for CSAT.",
+    "schema": {
+      "type": "string",
+      "enum": ["positive", "neutral", "negative"]
+    }
+  },
+  {
+    "id": "<structured-output-id>",
+    "name": "Call Success",
+    "description": "Whether the call met its objective: fully contained or correctly escalated with context.",
+    "schema": {
+      "type": "boolean"
+    }
+  }
+]

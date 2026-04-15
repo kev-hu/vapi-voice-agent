@@ -1,0 +1,22 @@
+{
+  "type": "code",
+  "function": {
+    "name": "customer_lookup",
+    "description": "Verify caller identity by looking up their policy number and last name in Salesforce. Call this before providing any account-specific information.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "policyNumber": {
+          "type": "string",
+          "description": "The caller's EverSure policy number"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "The caller's last name for verification"
+        }
+      },
+      "required": ["policyNumber", "lastName"]
+    }
+  },
+  "code": "const { policyNumber, lastName } = args;\nif (!policyNumber && !lastName) {\n  return { verified: false, message: 'Could not verify identity. Policy number and last name are required.' };\n}\nreturn {\n  verified: true,\n  customerId: 'CUST-2847391',\n  firstName: 'Sarah',\n  lastName: 'Mitchell',\n  policyNumber: policyNumber || 'EVS-2024-1847362',\n  policyType: 'Homeowners',\n  address: '742 Maple Drive, Springfield, IL 62704',\n  accountStatus: 'Active'\n};"
+}
