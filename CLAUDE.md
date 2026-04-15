@@ -8,7 +8,9 @@ A Vapi voice agent prototype for **EverSure Insurance** — an inbound customer 
 
 ## Testing the Agent
 
-Test via the [Vapi Dashboard](https://dashboard.vapi.ai) by selecting the **Observe: EverSure Insurance** assistant and starting a test call. The mock customer is **Sarah Mitchell**, policy number **EVS-2024-1847362**.
+Sample call transcripts (happy path, escalation, failed verification) live in `demo/sample-call.md`. The mock customer is **Sarah Mitchell**, policy number **EVS-2024-1847362**, claim **CLM-2024-09823**.
+
+To test live, the assistant can be loaded into [Vapi](https://vapi.ai) using `assistant.json` and the tool definitions in `tools/`.
 
 ## Key Files
 

@@ -1,7 +1,7 @@
 {
   "id": "<your-assistant-id>",
   "orgId": "<your-org-id>",
-  "name": "Observe: EverSure Insurance",
+  "name": "EverSure Insurance Voice Agent",
   "voice": {
     "model": "eleven_turbo_v2",
     "voiceId": "<your-11labs-voice-id>",
